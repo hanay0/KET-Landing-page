@@ -2,10 +2,9 @@
 $(document).ready(function () {
     $('.slides-wrapper').slick({
         centerMode: true,
-        centerPadding: '232px',
         slidesToShow: 3,
         autoplaySpeed: 1500,
-        autoplay: true,
+        autoplay: false,
         responsive: [
       {
           breakpoint: 768,
@@ -13,7 +12,7 @@ $(document).ready(function () {
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 2
         }
       },
       {
@@ -36,7 +35,7 @@ $(document).ready(function () {
         infinite: true,
         speed: 200,
         fade: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1500,
         arrows: true,
         prevArrow: '.arrow-left',
@@ -44,3 +43,41 @@ $(document).ready(function () {
         cssEase: 'linear'
     });
 });
+
+
+// parallax in banner
+$(".intro-banner").parallax({
+    opacity: ".2"
+  });
+  
+  $(".intro-banner h1").parallax({
+    y: '-20%',
+    scale: 1.3,
+  });
+
+
+  // vanilla JS
+  // collapsed navbar menu
+  const menuBtn = document.querySelector('.logo-wrapper .menu'),
+        menuLinks = document.querySelector('.nav-links');
+
+// adding event listener to that button
+// menuBtn.addEventListener('click', function() {
+//   menuLinks.classList.toggle('active-menu');
+// });
+  
+// jQuery
+$('.logo-wrapper .menu').click(function (e) { 
+  e.preventDefault();
+  // $('.nav-links').toggleClass('active-menu');
+  $('.nav-links').slideToggle('active-menu');
+  // $('.nav-links').fadeIn('slow');
+});
+
+
+
+
+
+
+
+
